@@ -1,0 +1,142 @@
+---
+import Main from '../pages/layouts/Layout.astro'
+import Cards from '../pages/components/cards.astro'
+---
+
+<Main title='Safina Fathima'>
+	<div class="profile">
+		<img class="profile__picture" width="100px" height="100px" src="/safina.jpeg" alt="safina image">
+	</div>
+
+	<div class="profile_description">
+		<h1>Safina Fathima</h1>
+		<h2>Junior Develper at Caproloks</h2>
+		<p>expertise in web scraping and automations advanced methodology</p>
+	</div>
+
+	<Cards cards={[
+		{
+			title:'Here are my guiding philosophies for life',
+			gradientFrom:'#818cf8',
+			gradientTo:'#d8b4fe',
+			to:'/philosophy'
+		},
+		{
+			title:'A summary of my work history',
+			gradientFrom:'#fde68a',
+			gradientTo:'#fca5a5',
+			to:'/work-summary'
+		},
+		{
+			title:'What i do beyound technology',
+			gradientFrom:'#6ee7b7',
+			gradientTo:'#9333ea',
+			to:'/beyound-tech'
+		}
+	]}></Cards>
+
+	<div class="featured-blogs">
+		<h3 class="featured-blogs__title">Featured Blogs</h3>
+		<p class="featured-blogs__description">
+			Opinion pieces that will change everything you know about web
+			development
+		</p>
+	</div>
+
+	<ol class="blogs">
+		<li class="blogs__list">
+			<a href="blogs/typescript" class="blogs__link" >Typescript is a new Javascript</a>
+		</li>
+		<li class="blogs__list">
+			<a href="blogs/rust" class="blogs__link">Why Rust is the future of javascript Tooling</a>
+		</li>
+		<li class="blogs__list">
+			<a href="blogs/sleep" class="blogs__link">Why you should sleep more</a>
+		</li>
+	</ol>
+</Main>
+    
+
+<style>
+	/* Styling the container holding the image and text */
+	.profile {
+		display: flex;
+		align-items: flex-start; /* Align items to the top */
+		flex-wrap: nowrap; /* Ensure content stays on one line */
+		gap: 1rem; /* Add space between the image and text */
+		padding: 1rem 0;
+	}
+
+	/* Styling the profile image */
+	.profile__picture {
+		border-radius: 50%; /* Makes the image circular */
+		width: 150px; /* Set fixed width */
+		height: 150px; /* Set fixed height */
+		object-fit: cover;
+		margin: 0 2rem 1rem 0; /* Ensures image fits without distortion */
+	}
+
+	/* Styling the description area */
+	.profile_description {
+		flex:1 0 300px;
+
+	}
+
+	/* Styling for headings */
+	.profile_description > h1 {
+		color: purple;
+		margin-top: 0
+	}
+
+	h2 {
+		font-size: 1.5rem;
+		margin: 0.5rem 0;
+		font-weight: normal;
+		color: #555;
+	}
+
+	/* Styling for paragraph */
+	p {
+		font-size: 1rem;
+		color: #333;
+	}
+
+	.featured-blogs{
+		margin: 0;
+		padding: 3rem 0 0 0;
+	}
+
+	.featured-blogs__title{
+		font-size: 2rem;
+		color: var(--grey-900);
+	}
+
+	.featured-blogs__description{
+		margin-top: -1rem;
+	}
+
+	.blogs{
+		font-size: 1rem;
+		font-weight: 500;
+	}
+
+	.blogs__list{
+		border-bottom: 1px solid ;
+		border-color: var(--grey-200);
+	}
+
+	.blogs__link{
+		opacity: 1;
+		height: 100%;
+		display: block;
+		padding:  1rem 0;
+		color: var(--grey-200);
+		text-decoration: none;
+		transition: opacity 0.2s ease-in-out;
+	}
+
+	.blogs__link:hover{
+		opacity: 0.7;
+	}
+</style>
+
